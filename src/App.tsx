@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { SelectNode } from './components/SelectorNode';
+import { useTypedSelector } from './hooks/useTypedSelector';
+import { useDispatch } from 'react-redux';
+import { setEdgeChanges, setNodeChanges } from './store/slices/graphSlice';
+import ReactFlow from 'reactflow';
+import 'reactflow/dist/style.css';
+
+const nodeTypes = { select: SelectNode };
 
 function App() {
+  const nodes = useTypedSelector((state) => state.graph.nodes);
+  const edges = useTypedSelector((state) => state.graph.edges);
+
+  const dispatch = useDispatch();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: '100vw', height: '100vh' }}>
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        nodeTypes={nodeTypes}
+        onNodesChange={(nodeChanges) => dispatch(setNodeChanges(nodeChanges))}
+        onEdgesChange={(edgeChanges) => dispatch(setEdgeChanges(edgeChanges))}
+      />
     </div>
   );
 }

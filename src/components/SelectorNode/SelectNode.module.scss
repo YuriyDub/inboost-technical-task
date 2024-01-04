@@ -1,0 +1,24 @@
+.node {
+	width: 240px;
+	padding: 20px 4px 8px 4px;
+	border-radius: 4px;
+	background-color: var(--colors-primary-light);
+
+	.body {
+		height: 72px;
+		border-radius: 4px;
+		background-color: white;
+		margin-bottom: 8px;
+	}
+
+	.source {
+		background-color: #adb5bd;
+		border: none;
+		top: auto;
+		bottom: 22px;
+	}
+
+	.target {
+		visibility: hidden;
+	}
+}

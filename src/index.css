@@ -1,13 +1,15 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Indie+Flower&family=Sen:wght@400;500;600;700;800&display=swap');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --colors-primary: #479f76;
+  --colors-primary-light: #d1e7dd;
+
+  --colors-secondary: #2c7dfa;
+  --colors-secondary-light: #95befc;
+  --colors-secondary-extralight: #eaf2ff;
+
+  --colors-text: #37352f;
+
+  font-family: 'IBM Plex Sans', sans-serif;
 }
